@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>이벤트 실습</h3>
+
+    <h3>셀렉트 태그의 주요 이벤트는 change</h3>
+    <select onchange="console.log('인라인이벤트실행')";>
+        <option>사과</option>
+        <option>멜론</option>
+        <option>오렌지</option>
+    </select>
+
+    <h3>인풋 태그의 주요 이벤트는 input, focus, blur</h3>
+    <input type="text" id="input">
+
+    <div>마우스이벤트는 mouseenter, mouseleave</div>
+    <div id="mouse" style="width:100px; height: 100px; border:1px solid #777">
+
+    </div>
+
+    <script>
+        // 각 태그에 이벤트를 걸어서 console 창으로 동작을 확인
+        function h3_input(){
+            console.log('인풋이벤트 실행');
+            
+        };
+        
+        function h3_focus(){
+            console.log('포커스이벤트 실행');
+            
+        };
+
+        function h3_blur(){
+            console.log('블러이벤트 실행');
+            
+        }
+
+        function div_mouseenter(){
+            console.log('마우스엔터이벤트실행');
+            
+        }
+
+        function div_mouseleave(){
+            console.log('마우스리브이벤트실행');
+            
+        }
+        
+        let a1=document.getElementById("input");
+        let a2=document.getElementById("mouse");
+
+        a1.oninput=h3_input;
+        a1.onfocus=h3_focus;
+        a1.onblur=h3_blur;
+
+        a2.addEventListener("mouseenter", div_mouseenter);
+        a2.addEventListener("mouseleave", div_mouseleave)
+    </script>
+
+
+
+</body>
+</html>
