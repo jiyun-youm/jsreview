@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="nameForm">
+        <h3 class="nameTitle"></h3>
+        <input type="text" class="name" placeholder="이름을 입력하세요">
+        <button type="button" class="btn">확인</button>
+    </form>
+
+    <form class="todoForm">
+        <input type="text" placeholder="당신의 할일을 적으시오">
+        <button type="button" class="btn">확인</button>
+    </form>
+    <ul class="todoList">
+
+    </ul>
+
+    <script>
+        let nameTitle=document.querySelector('.nameTitle');
+        let name=document.querySelector('.name');
+        let btn=document.querySelector('.btn');
+        
+        btn.addEventListener('click',()=>{
+            let userName=name.value;
+            nameTitle.innerText=`안녕하세요, ${userName}님!`;
+            name.style.display='none';
+            btn.style.display='none';
+        })
+
+        let todo=document.querySelector('.todoForm>input');
+        let todoBtn=document.querySelector('.todoForm>.btn');
+        let todoList=document.querySelector('.todoList');
+
+        todoBtn.onclick=()=>{
+            let todo1=todo.value;
+            todo.value="";
+
+
+            let li=document.createElement("li");
+            li.innerText=todo1;
+
+            let button=document.createElement("button");
+            li.appendChild(button);
+
+            todoList.appendChild(li);
+            
+        }
+    </script>
+</body>
+</html>
