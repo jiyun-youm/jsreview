@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        box.onclick=function(e){
+            console.log(e);
+            console.log(e.target);  // 이벤트가 실제로 동작한 태그
+            console.log(e.currentTarget); //이벤트가 실제로 걸려있는 태그
+            console.log(e.type); //이벤트 종류
+        }
+    </script>
+</body>
+</html>
