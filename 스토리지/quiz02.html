@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="weather">
+        <img src="/스토리지/img/1.jpg" alt="봄">
+        <img src="/스토리지/img/2.jpg" alt="여름">
+        <img src="/스토리지/img/3.jpg" alt="가을">
+        <img src="/스토리지/img/4.jpg" alt="겨울">
+    </ul>
+
+    <button type="button" onclick="location.href='quiz02_result.html';">최신정보확인하기</button>
+
+    <script>
+        let weather=document.querySelector(".weather");
+        let arr=[];
+        weather.addEventListener("click",(e)=>{
+            if(e.target.tagName !=="IMG") return
+            arr.push(e.target.src)
+            let result=[arr[arr.length-2],arr[arr.length-1]]
+            localStorage.setItem("weather",JSON.stringify(result))
+        })
+        
+        
+    </script>
+    
+</body>
+</html>
