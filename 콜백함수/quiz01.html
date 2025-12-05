@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //https://raw.githubusercontent.com/yopy0817/data_example/refs/heads/master/by.json
+        fetch("https://raw.githubusercontent.com/yopy0817/data_example/refs/heads/master/by.json")
+        .then(response=>response.json())
+        .then(data=>{
+            data.forEach(item=>{
+                console.log(item.key,".",item.value);
+                
+            })
+        })
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fetch("hello.txt")
+        // .then((result)=>{
+        //     result.text().then((data)=>{console.log(data);
+        //     })
+        // })       
+        /* 
+        fetch를 호출시 프로미스 객체를 받음
+        -fulfilled: 실행성공
+        -pending: 대기중
+        -rejected: 실패
+        */
+        // let promise=fetch("주소") //프로미스객체 반환
+        // promise.then((data)=>{
+        //     console.log(data); //response객체
+            
+        // })
+
+
+        // //위에랑 같은거임//
+
+        // console.log(1);
+        
+        // fetch("주소").then((data)=>{console.log(data);
+        // })
+
+        // console.log(3);
+
+        // //실행순서: 1->3->response(비동기적으로 동작함)
+
+        //then()-함수의 체이닝->then함수 안에서 return을 적으면, 다시 promise를 반환함
+        fetch("hello.txt")
+        .then(response=>response.text()) //안녕 반환 //(1)여기서 리턴한 "1"은 다시 fetch로 들어감
+        .then(data=> console.log(data)) //그 안녕이 data에 들어감 //안녕 출력됨//(2)그 fetch().then()에 또다시 .then()을 붙여서 사용할 수 있음..이게 무한정 가능(무한정 .then을 붙일 수 있다)
+        .catch(e=>console.log(e)) //에러발생시 catch 동작함
+                                
+    
+        
+    </script>    
+    
+
+</body>
+</html>

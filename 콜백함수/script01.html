@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function some(callback){
+            setTimeout(function(){
+                console.log("실행");
+                callback("5초뒤 실행")
+            },5000)
+        }
+
+        // some(function(msg){msg});
+        console.log("1. 배달주문함");
+
+setTimeout(function() {
+  console.log("2. 띵똥! 치킨이 도착했어요. (3초 후 실행)");
+}, 3000);
+
+console.log("3. 나는 그동안 게임중");
+
+    </script>
+    
+</body>
+</html>
